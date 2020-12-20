@@ -41,7 +41,7 @@ if __name__ == '__main__':
     nsamples = 20000000;
     datapointwts = getdata(nsamples, datafile, '2010-10-01', '2015-10-08');
     print('all datapoints ', len(datapointwts))
-    datapointwts = [xx for xx in datapointwts if xx[3] >= 10]; #filter low speed points
+    datapointwts = [xx for xx in datapointwts if xx[3] >= 5]; #filter low speed points
     print('datapoints with speed>=5kmph: ', len(datapointwts))
     seeds = computeclusters(datapointwts, 50, SEEDRADIUS,theta); # compute k-means; seeds cluster centroids
     print('clusters: ',len(seeds), time.time() - start)
